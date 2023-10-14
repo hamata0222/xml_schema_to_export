@@ -10,7 +10,10 @@ def print_children_element(element:xmlschema.XsdElement, depth):
     indent = ''
     for _ in range(depth):
         indent = indent + '    '
-    print(indent, element.local_name or 'any', sep='')
+    
+    print(indent, element.local_name or 'any', sep='', end=None if len(element.attributes) == 0 else '')
+    for attrib in element.attributes:
+        print('\t', attrib, sep='')
 
     for ele in element.iterchildren():
         print_children_element(ele, depth + 1)
