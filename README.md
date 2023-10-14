@@ -1,0 +1,2 @@
+# xml_schema_to_export
+XMLスキーマファイルから要素と属性の一覧を抜き出すツール
